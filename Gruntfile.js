@@ -76,6 +76,19 @@ module.exports = function (grunt) {
         src: 'components/_common.css',
         dest: 'lib/rivela.css'
       }
+    },
+    postcss: {
+      options: {
+        map: false, // inline sourcemaps
+
+        processors: [
+          require('autoprefixer')({browsers: 'last 2 versions'}),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: 'lib/rivela.css'
+      }
     }
   })
 
@@ -87,8 +100,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-babel')
   grunt.loadNpmTasks('grunt-umd')
   grunt.loadNpmTasks('grunt-contrib-copy')
+  grunt.loadNpmTasks('grunt-postcss')
 
-  grunt.registerTask('default', ['concat:dist', 'version:dist', 'babel:dist', 'uglify:dist', 'copy:main', 'umd'])
+  grunt.registerTask('default', ['concat:dist', 'version:dist', 'babel:dist', 'uglify:dist', 'copy:main', 'postcss', 'umd'])
   grunt.registerTask('dev', ['browserSync:dev'])
   grunt.registerTask('umde', ['umd'])
 }

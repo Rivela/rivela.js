@@ -1,5 +1,3 @@
-/* global d3, rivela */
-
 ;(function () {
   var ns = 'circlepack' // namespace
   window.rivela[ns] = function init () {

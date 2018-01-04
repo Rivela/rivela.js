@@ -1,5 +1,3 @@
-/* global d3, rivela */
-
 ;(function () {
   var ns = 'piechart'
   window.rivela[ns] = function init () {

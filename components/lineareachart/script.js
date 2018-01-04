@@ -1,5 +1,3 @@
-/* global d3, rivela */
-
 ;(function () {
   var ns = 'lineareachart'
   window.rivela[ns] = function init () {

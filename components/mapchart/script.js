@@ -1,5 +1,3 @@
-/* global d3, rivela */
-
 ;(function () {
   var ns = 'mapchart'
   window.rivela[ns] = function init () {
