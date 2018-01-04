@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abusedmedia/rivela.js.git"
+    "url": "git+https://github.com/Rivela/rivela.js.git"
   },
   "keywords": [
     "d3js",
@@ -19,9 +19,9 @@
   "author": "Fabio Franchino",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/abusedmedia/rivela.js/issues"
+    "url": "https://github.com/Rivela/rivela.js/issues"
   },
-  "homepage": "https://github.com/abusedmedia/rivela.js#readme",
+  "homepage": "https://github.com/Rivela/rivela.js#readme",
   "dependencies": {
     "d3": "^4.12.0"
   },
@@ -40,6 +40,6 @@
     "grunt-version": "^1.1.1"
   },
   "files": [
-    "umd"
+    "lib"
   ]
 }
