@@ -1,6 +1,6 @@
 {
   "name": "rivela",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Collection of reusable d3.js components for fast business analytic dashboards design",
   "main": "umd/rivela.js",
   "scripts": {
