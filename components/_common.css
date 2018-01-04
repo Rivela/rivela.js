@@ -1,0 +1,60 @@
+
+svg[fit]{
+	width: 100%;
+}
+
+.rivela .basement{
+	fill:#fff;
+}
+
+.rivela .background{
+	fill:#eee;
+}
+
+.rivela .area{
+	fill:#333;
+}
+
+.rivela .line{
+	fill:none;
+	stroke:#333;
+}
+
+.rivela .over {
+	fill:#f00;
+}
+
+
+.rivela .slice .label{
+	text-anchor: middle;
+	fill:#333;
+	font-size: 8px;
+	font-family: sans-serif;
+}
+
+.rivela .ax line, 
+.rivela .ax path{
+	stroke:#999;
+	fill:none;
+	shape-rendering: crispEdges;	
+}
+
+.rivela .ax text,
+.rivela .label text{
+	fill:#999;
+	font-size: 9px;
+	font-family: sans-serif;
+}
+
+.rivela .label.title text{
+	fill:#333;
+	font-size: 12px;
+}
+
+.rivela.naked .ax,
+.rivela.naked .label,
+.rivela.naked .title,
+.rivela.naked .back,
+.rivela.naked .behind{
+	display: none;
+}

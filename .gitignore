@@ -2,3 +2,4 @@ node_modules
 umd/
 dist/
 examples/
+_tooltip/
