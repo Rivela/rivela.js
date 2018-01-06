@@ -67,14 +67,14 @@ module.exports = function (grunt) {
       all: {
         options: {
           src: 'dist/rivela.min.js',
-          dest: 'lib/rivela.js'
+          dest: 'lib/rivela.min.js'
         }
       }
     },
     copy: {
       main: {
         src: 'components/_common.css',
-        dest: 'lib/rivela.css'
+        dest: 'lib/rivela.min.css'
       }
     },
     postcss: {
@@ -87,7 +87,7 @@ module.exports = function (grunt) {
         ]
       },
       dist: {
-        src: 'lib/rivela.css'
+        src: 'lib/rivela.min.css'
       }
     }
   })

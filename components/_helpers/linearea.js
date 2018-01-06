@@ -8,7 +8,7 @@
 
     cfg.x = (d, i) => i
     cfg.y = d => d
-    cfg.serie = null
+    cfg.series = null
     cfg.multiple = null
     cfg.curve = d3.curveLinear
     cfg.extents = {x: null, y: null}
@@ -21,7 +21,7 @@
     cfg.interfaces.push(
       'x',
       'y',
-      'serie',
+      'series',
       'multiple',
       'curve',
       'extents',
@@ -49,22 +49,22 @@
       var extDataY = (cfg.extents.y) || series
 
       var minX = d3.min(extDataX, (d, i) => {
-        var serie = (cfg.serie) ? uga(d, i, cfg.serie) : d
+        var serie = (cfg.series) ? uga(d, i, cfg.series) : d
         return d3.min(serie, (c, j) => uga(c, j, cfg.x))
       })
 
       var minY = d3.min(extDataY, (d, i) => {
-        var serie = (cfg.serie) ? uga(d, i, cfg.serie) : d
+        var serie = (cfg.series) ? uga(d, i, cfg.series) : d
         return d3.min(serie, (c, j) => uga(c, j, cfg.y))
       })
 
       var maxX = d3.max(extDataX, (d, i) => {
-        var serie = (cfg.serie) ? uga(d, i, cfg.serie) : d
+        var serie = (cfg.series) ? uga(d, i, cfg.series) : d
         return d3.max(serie, (c, j) => uga(c, j, cfg.x))
       })
 
       var maxY = d3.max(extDataY, (d, i) => {
-        var serie = (cfg.serie) ? uga(d, i, cfg.serie) : d
+        var serie = (cfg.series) ? uga(d, i, cfg.series) : d
         return d3.max(serie, (c, j) => uga(c, j, cfg.y))
       })
 
@@ -72,7 +72,7 @@
       var colw = 0
 
       if (cfg.ordinal) {
-        var map = (cfg.serie) ? uga(extDataX, 0, cfg.serie) : extDataX.map(cfg.x)
+        var map = (cfg.series) ? uga(extDataX, 0, cfg.series) : extDataX.map(cfg.x)
         mapX = d3.scaleBand()
             .domain(map)
             .range([0, cfg.innerw])
@@ -142,7 +142,7 @@
           .duration(cfg.ctime)
           .style('opacity', 1)
           .attr('d', (d, i) => {
-            var serie = (cfg.serie) ? uga(d, i, cfg.serie) : d
+            var serie = (cfg.series) ? uga(d, i, cfg.series) : d
             return gen(serie)
           })
           .style(notVisProp, null)
