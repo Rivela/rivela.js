@@ -1,5 +1,5 @@
 {
-  "name": "rivela",
+  "name": "rivelajs",
   "version": "0.0.5",
   "description": "Collection of reusable d3.js components for fast business analytic dashboards design",
   "main": "umd/rivela.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rivela/rivela.js.git"
+    "url": "git+https://github.com/Rivela/rivelajs.git"
   },
   "keywords": [
     "d3js",
@@ -19,9 +19,9 @@
   "author": "Fabio Franchino",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Rivela/rivela.js/issues"
+    "url": "https://github.com/Rivela/rivelajs/issues"
   },
-  "homepage": "https://github.com/Rivela/rivela.js#readme",
+  "homepage": "https://github.com/Rivela/rivelajs#readme",
   "dependencies": {
     "d3": "^4.12.0"
   },
