@@ -8,6 +8,7 @@
 
     cfg.key = (d, i) => i
     cfg.value = d => d
+    cfg.series = null
     cfg.colors = null
     cfg.padder = {inner: 0.1, outer: 0.1, align: 0.5}
     cfg.id = null
@@ -19,6 +20,8 @@
     cfg.interfaces.push(
         'key',
         'value',
+        'series',
+        'colors',
         'id',
         'extents',
         'horizontal',
@@ -29,7 +32,8 @@
 
     function build () {
       var element = cfg.element
-      var data = cfg.data
+
+      var series = (cfg.series) ? uga(cfg.data, 0, cfg.series) : cfg.data
 
       var isH = cfg.horizontal
       var innerk = (isH) ? cfg.innerh : cfg.innerw
@@ -39,7 +43,7 @@
       var barPos = (isH) ? 'x' : 'y'
       var barNotPos = (isH) ? 'y' : 'x'
 
-      var extData = (cfg.extents.value) || data
+      var extData = (cfg.extents.value) || series
 
       var mapK
       var colSize = 0
@@ -56,10 +60,10 @@
       } else {
         var extK = d3.extent(extData, (d, i) => uga(d, i, cfg.key))
         mapK = cfg.scales.key()
-            .domain(extK)
+            .domain([0, extData.length])
             .range([0, innerk])
         colSize = innerk / (extData.length)
-        shift = colSize / 2
+        shift = 0 // colSize / 2 //??
       }
 
       var extV = d3.extent(extData, (d, i) => uga(d, i, cfg.value))
@@ -82,7 +86,7 @@
       var elems = cfg.container
             .select('.chart')
             .selectAll('g')
-            .data(data, cfg.id)
+            .data(series, cfg.id)
 
         /*
             --------------------------------------
@@ -91,10 +95,11 @@
       var enterElems = elems.enter()
             .append('g')
             .attr('transform', (d, i) => {
-              var v = mapK(uga(d, i, cfg.key)) - shift
+              var index = (cfg.ordinal) ? uga(d, i, cfg.key) : i
+              var v = mapK(index) - shift
               return (isH) ? `translate(0, ${v})` : `translate(${v}, 0)`
             })
-            .classed('bar', true)
+            .classed('item', true)
 
       enterElems.append('rect')
             .attr(barK, colSize)
@@ -110,7 +115,8 @@
             .delay(cfg.ctime / 10)
             .ease(d3.easeExpInOut)
             .attr('transform', (d, i) => {
-              var v = mapK(uga(d, i, cfg.key)) - shift
+              var index = (cfg.ordinal) ? uga(d, i, cfg.key) : i
+              var v = mapK(index) - shift
               return (isH) ? `translate(0, ${v})` : `translate(${v}, 0)`
             })
             .select('rect')
@@ -134,6 +140,7 @@
               }
             })
             .attr(barNotPos, 0)
+            .filter(() => (cfg.colors))
             .style('fill', cfg.colors)
 
         /*

@@ -3,7 +3,6 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     d3.select(window).on('resize', () => {
-      console.log('resize')
       d3.selectAll('[ratio]').each(function () {
         var ratio = d3.select(this).attr('ratio')
         var factor = (ratio) ? (ratio.split(' ')[1] / ratio.split(' ')[0]) : 1

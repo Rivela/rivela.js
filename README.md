@@ -62,6 +62,8 @@ grunt dev
 ```
 
 
+## License
+
 MIT License
 
 Copyright (c) 2017-2018 Fabio Franchino. All rights reserved.

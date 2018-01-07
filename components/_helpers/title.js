@@ -9,15 +9,14 @@
     function build () {
       var data = cfg.data
 
-      cfg.eContainer.append('g').classed('title label', true)
+      cfg.eContainer.append('g').classed('title', true)
             .append('text')
 
       cfg.container
-            .select('.title.label')
-            .select('text')
+            .select('.title')
             .attr('transform', `translate(${cfg.outerw / 2},${-10})`)
+            .select('text')
             .text(() => uga(data, 0, cfg.labels.title))
-            .style('text-anchor', 'middle')
     }
     return build
   }

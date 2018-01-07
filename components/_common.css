@@ -20,9 +20,7 @@ svg[fit]{
 	stroke:#333;
 }
 
-.rivela .over {
-	fill:#f00;
-}
+
 
 
 .rivela .slice .label{
@@ -39,17 +37,19 @@ svg[fit]{
 	shape-rendering: crispEdges;	
 }
 
-.rivela .ax text,
-.rivela .label text{
+.rivela  text,
+.rivela text{
 	fill:#999;
 	font-size: 9px;
 	font-family: sans-serif;
 }
 
-.rivela .label.title text{
+.rivela .title text{
 	fill:#333;
 	font-size: 12px;
+	text-anchor: middle;
 }
+
 
 .rivela.naked .ax,
 .rivela.naked .label,
