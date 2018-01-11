@@ -1,5 +1,3 @@
-/* global d3, rivela */
-
 ;(function () {
   var ns = '_axisx'
   window.rivela[ns] = function init (cfg) {
