@@ -41,7 +41,8 @@
       var barPos = (isH) ? 'x' : 'y'
       var barNotPos = (isH) ? 'y' : 'x'
 
-      var extData = (cfg.extents.value) || series
+      var extDataK = (cfg.extents.key) || series
+      var extDataV = (cfg.extents.value) || series
 
       var mapK
       var colSize = 0
@@ -49,22 +50,22 @@
 
       if (cfg.ordinal) {
         mapK = d3.scaleBand()
-            .domain(extData.map(cfg.key))
+            .domain(extDataK.map(cfg.key))
             .range([0, innerk])
             .paddingInner([cfg.padder.inner])
             .paddingOuter([cfg.padder.outer])
             .align([cfg.padder.align])
         colSize = mapK.bandwidth()
       } else {
-        var extK = d3.extent(extData, (d, i) => uga(d, i, cfg.key))
+        var extK = d3.extent(extDataK, (d, i) => uga(d, i, cfg.key))
         mapK = cfg.scales.key()
-            .domain([0, extData.length])
+            .domain([0, extDataK.length])
             .range([0, innerk])
-        colSize = innerk / (extData.length)
+        colSize = innerk / (extDataK.length)
         shift = 0 // colSize / 2 //??
       }
 
-      var extV = d3.extent(extData, (d, i) => uga(d, i, cfg.value))
+      var extV = d3.extent(extDataV, (d, i) => uga(d, i, cfg.value))
 
       if (extV[0] > 0) extV[0] = 0
 

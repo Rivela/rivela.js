@@ -12,14 +12,15 @@
     function build () {
       var data = cfg.data
 
-      cfg.eContainer.append('g').classed('title', true)
-            .append('text')
+      cfg.container.select('.overall')
+        .append('g').classed('title', true)
+        .append('text')
 
       cfg.container
-            .select('.title')
-            .attr('transform', `translate(${cfg.outerw / 2},${-10})`)
-            .select('text')
-            .text(() => uga(data, 0, cfg.title))
+        .select('.title')
+        .attr('transform', `translate(${cfg.width / 2},${20})`)
+        .select('text')
+        .text(() => uga(data, 0, cfg.title))
     }
     return build
   }

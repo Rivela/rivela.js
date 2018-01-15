@@ -1,6 +1,14 @@
 ;(function () {
   var ns = '_axisy'
   window.rivela[ns] = function init (cfg) {
+    var utils = rivela._utils()
+    var uga = utils.getAccessor
+
+    cfg.axisy = d3.axisLeft()
+    cfg.interfaces.push(
+        'axisy'
+    )
+
     function build () {
       var container = cfg.container
       var eContainer = cfg.eContainer
@@ -16,7 +24,8 @@
       */
       eContainer.append('g').classed('ax y axis', true)
 
-      var yAxis = d3.axisLeft(mapY).ticks(6)
+      var yAxis = cfg.axisy
+        .scale(mapY)
 
       container
             .select('.y.axis')

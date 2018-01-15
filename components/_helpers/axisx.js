@@ -1,6 +1,16 @@
 ;(function () {
   var ns = '_axisx'
   window.rivela[ns] = function init (cfg) {
+    var utils = rivela._utils()
+    var uga = utils.getAccessor
+
+    cfg.axisx = null
+    cfg.axisxOpposite = false
+    cfg.interfaces.push(
+        'axisx',
+        'axisxOpposite'
+      )
+
     function build () {
       var container = cfg.container
       var eContainer = cfg.eContainer
@@ -16,13 +26,17 @@
             Axis X
       */
 
+      var ax = (cfg.axisx) ? cfg.axisx : (cfg.axisxOpposite) ? d3.axisTop() : d3.axisBottom()
       eContainer.append('g').classed('ax x axis', true)
 
-      var xAxis = d3.axisBottom(mapX).ticks(6)
+      var xAxis = ax
+        .scale(mapX)
+
+      var pos = (cfg.axisxOpposite) ? 0 : outerh
 
       container
         .select('.x.axis')
-        .attr('transform', `translate(${cfg.pl},${outerh})`)
+        .attr('transform', `translate(${cfg.pl},${pos})`)
         .transition()
         .duration(ctime)
         .call(xAxis)
@@ -34,7 +48,7 @@
         .duration(ctime)
         .style('text-anchor', () => (rotLabels.x) ? 'end' : 'middle')
         .attr('dx', () => (rotLabels.x) ? '-.8em' : '0')
-        .attr('dy', () => (rotLabels.x) ? '.15em' : '.71em')
+        // .attr('dy', () => (rotLabels.x) ? '.15em' : '.71em')
         .attr('transform', () => (rotLabels.x) ? 'rotate(-65)' : 'rotate(0)')
 
       /*

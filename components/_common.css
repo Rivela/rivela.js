@@ -21,7 +21,9 @@ svg[fit]{
 }
 
 
-
+.rivela .chart text{
+	dominant-baseline: central;
+}
 
 .rivela .item .label{
 	text-anchor: middle;
