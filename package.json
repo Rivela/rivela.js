@@ -2,7 +2,7 @@
   "name": "rivelajs",
   "version": "0.0.8",
   "description": "Collection of reusable d3.js components for fast business analytic dashboards design",
-  "main": "umd/rivela.js",
+  "main": "lib/rivela.min.js",
   "scripts": {
     "test": "grunt",
     "bump": "git add -u && git commit -m \"patch\" && npm version patch && grunt && git push && npm publish"
