@@ -1,6 +1,6 @@
 {
   "name": "rivelajs",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Collection of reusable d3.js components for fast business analytic dashboards design",
   "main": "lib/rivela.min.js",
   "scripts": {
