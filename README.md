@@ -2,7 +2,7 @@
 
 A collection of reusable d3.js components and chart templates
 
-![](https://travis-ci.org/Rivela/rivela.js.svg?branch=master)
+[![Build Status](https://travis-ci.org/Rivela/rivelajs.svg?branch=master)](https://travis-ci.org/Rivela/rivelajs)
 
 ## Include the library
 
