@@ -50,9 +50,6 @@
       var eContainer = eWrapper.append('g')
             .classed('front', true)
 
-      eWrapper.append('g')
-            .classed('overall', true)
-
       eContainer.append('g')
             .classed('back', true)
             .append('rect')
