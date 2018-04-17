@@ -5,7 +5,8 @@
   "main": "lib/rivela.min.js",
   "scripts": {
     "test": "grunt",
-    "bump": "git add -u && git commit -m \"patch\" && npm version patch && grunt && git push && npm publish"
+    "bump": "git add -u && git commit -m \"patch\" && npm version patch && git push",
+    "publish": "grunt && npm publish"
   },
   "repository": {
     "type": "git",
