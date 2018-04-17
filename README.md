@@ -1,6 +1,6 @@
 # Rivelajs
 
-A collection of reusable d3.js components and chart templates
+A collection of reusable d3.js components and chart templates with interactivity and interoperability in mind
 
 [![Build Status](https://travis-ci.org/Rivela/rivelajs.svg?branch=master)](https://travis-ci.org/Rivela/rivelajs)
 

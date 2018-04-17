@@ -12,7 +12,10 @@
     function build () {
       var data = cfg.data
 
-      cfg.container.select('.overall')
+      var binding = cfg.container.selectAll('.title')
+            .data([null])
+
+      binding.enter()
         .append('g').classed('title', true)
         .append('text')
 
